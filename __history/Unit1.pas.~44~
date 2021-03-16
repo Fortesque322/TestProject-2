@@ -15,20 +15,20 @@ type
     FOld: integer;
     FWorkName: string;
 
-    FColorEye: TColorsEye;  //Переменная FColorEye с типом данных TColorEye
+    FColorEye: TColorsEye;
     function GetColorEye: TColorsEye;
 
   public
 
     property ColorEye: TColorsEye read GetColorEye write FColorEye;
-    constructor Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);  //
+    constructor Create(old: integer; ColorEye, Name, SecondName, WorkName: string);  //
     destructor Destroy;
 
     procedure SetName(Name: string);
     procedure SetSecondName(SecondName: string);
     procedure SetWorkName(WorkName: string);
     procedure SetOld(old: integer);
-    procedure SetColorEye(ColorEye:TColorsEye);
+    procedure SetColorEye();
     procedure Init;
 
     function GetName: string;
@@ -41,7 +41,7 @@ implementation
 
 { FWork }
 
-constructor TWork.Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);
+constructor TWork.Create(old: integer; ColorEye:string; Name, SecondName, WorkName: string);
 begin
   Init;
   FColorEye := ColorEye;

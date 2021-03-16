@@ -3,17 +3,22 @@ unit Unit1;
 interface
 
 const
-  FWorkName: array [0 .. 2] of string = ('1', '2', '3');
+  TWorkName: array [0 .. 2] of string = ('1', '2', '3');
 
 type
+  TColorsEye = (Red,Green,Blue);
+
   TWork = class
   strict private
     FName: string;
     FSecondName: string;
     FOld: integer;
     FWorkName: string;
+    FColorEye: TColorsEye;
+    function GetColorEye: TColorsEye;
   public
-    constructor Create(old: integer; Name, SecondName, WorkName: string);
+    property ColorEye: TColorsEye read GetColorEye write FColorEye;
+    constructor Create(old: integer; Name, SecondName, WorkName: string);  //
     destructor Destroy;
     procedure SetName(Name: string);
     procedure SetSecondName(SecondName: string);
@@ -21,7 +26,10 @@ type
     procedure SetOld(old: integer);
     procedure Init;
 
-    procedure GetName(Name: string);
+    function GetName: string;
+    function GetSecondName: string;
+    function GetWorkName: string;
+    function GetOld: integer;
   end;
 
 implementation
@@ -43,9 +51,31 @@ begin
 
 end;
 
-procedure TWork.GetName;
+
+
+function TWork.GetColorEye: TColorsEye;
 begin
-  Writeln(Name);
+  Result := FColorEye;
+end;
+
+function TWork.GetName: string;
+begin
+  Result := FName;
+end;
+
+function TWork.GetOld: integer;
+begin
+  Result := FOld;
+end;
+
+function TWork.GetSecondName: string;
+begin
+  Result := FSecondName;
+end;
+
+function TWork.GetWorkName: string;
+begin
+  Result := FWorkName;
 end;
 
 procedure TWork.Init;
@@ -58,24 +88,22 @@ end;
 
 procedure TWork.SetName(Name: string);
 begin
-//  Writeln('Введите Имя');
-//  Readln(Name);
-  Name := FName;
+  FName := Name ;
 end;
 
 procedure TWork.SetOld(old: integer);
 begin
-
+  FOld := old;
 end;
 
 procedure TWork.SetSecondName(SecondName: string);
 begin
-
+  FSecondName := SecondName;
 end;
 
 procedure TWork.SetWorkName(WorkName: string);
 begin
-
+  FWorkName :=  WorkName;
 end;
 
 end.

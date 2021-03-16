@@ -10,21 +10,16 @@ uses
 
   var
   Employee : TWork;
-  color:TColorsEye;
   str:string;
 
 begin
   try
-  Employee := Twork.Create(12, Blue,'aaa','ddd','sss');
-
+  Employee := Twork.Create(12,'aaa','ddd','sss');
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
-  Writeln('Проф: ' + Employee.GetWorkName);
-
-  Writeln('Цвет Глаз: ' + Employee.ColorEye);   // Несовместимый тип данных строка и Tcolor
-
-  Writeln('Замените данные');
+  Writeln('Проф: ' + Employee.GetWorkName); 
+  Writeln('Замените данные');   
     readln(str);
   Employee.SetName(str);
     readln(str);
@@ -33,16 +28,11 @@ begin
   Employee.SetOld(StrtoInt(str));
     readln(str);
   Employee.SetWorkName(str);
-    readln(str);
-  Employee.SetColorEye(color);
-
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
-  Writeln('Eye: '+ Employee.GetColorEye);  //private
-
-  readln;
+  readln;  
   except
     on E: Exception do
       Writeln(E.ClassName, 'Erro!', E.Message);

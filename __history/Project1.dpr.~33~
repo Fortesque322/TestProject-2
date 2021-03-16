@@ -40,7 +40,7 @@ begin
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
-  Writeln('Eye: '+ Employee.GetColorEye);  //private
+  Writeln('Eye: '+ Employee.SetColorEye);
 
   readln;
   except
