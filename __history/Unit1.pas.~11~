@@ -21,8 +21,6 @@ type
     procedure SetWorkName(WorkName:string);
     procedure SetOld(Old:integer);
     procedure Init;
-
-    procedure GetName(Name:string);
   end;
 
 
@@ -45,11 +43,6 @@ begin
 
 end;
 
-procedure FWork.GetName;
-  begin
-    Writeln(Name);
-  end;
-
 procedure FWork.Init;
   begin
     FName := '';
@@ -58,12 +51,9 @@ procedure FWork.Init;
     FWorkName := '';
   end;
 
-
-
 procedure FWork.SetName(Name: string);
   begin
-    Readln(Name);
-    Name := FName;
+    //FworkName :=
   end;
 
 procedure FWork.SetOld(Old: integer);
