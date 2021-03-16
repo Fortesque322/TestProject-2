@@ -31,8 +31,7 @@ begin
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
-  Writeln('Проф: ' + Employee.GetWorkName);
-  readln;  
+  Writeln('Проф: ' + Employee.GetWorkName);  
   except
     on E: Exception do
       Writeln(E.ClassName, 'Erro!', E.Message);

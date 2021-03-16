@@ -6,19 +6,14 @@ const
   TWorkName: array [0 .. 2] of string = ('1', '2', '3');
 
 type
-  TColorsEye = (Red,Green,Blue);
-
   TWork = class
   strict private
     FName: string;
     FSecondName: string;
     FOld: integer;
     FWorkName: string;
-    FColorEye: TColorsEye;
-    function GetColorEye: TColorsEye;
   public
-    property ColorEye: TColorsEye read GetColorEye write FColorEye;
-    constructor Create(old: integer; Name, SecondName, WorkName: string);  //
+    constructor Create(old: integer; Name, SecondName, WorkName: string);
     destructor Destroy;
     procedure SetName(Name: string);
     procedure SetSecondName(SecondName: string);
@@ -53,11 +48,6 @@ end;
 
 
 
-function TWork.GetColorEye: TColorsEye;
-begin
-  Result := FColorEye;
-end;
-
 function TWork.GetName: string;
 begin
   Result := FName;
@@ -88,7 +78,7 @@ end;
 
 procedure TWork.SetName(Name: string);
 begin
-  FName := Name ;
+  Name := FName;
 end;
 
 procedure TWork.SetOld(old: integer);

@@ -1,0 +1,81 @@
+﻿unit Unit1;
+
+interface
+
+const
+  FWorkName: array [0 .. 2] of string = ('1', '2', '3');
+
+type
+  FWork = class
+  strict private
+    FName: string;
+    FSecondName: string;
+    FOld: integer;
+    FWorkName: string;
+  public
+    constructor Create(old: integer; Name, SecondName, WorkName: string);
+    destructor Destroy;
+    procedure SetName(Name: string);
+    procedure SetSecondName(SecondName: string);
+    procedure SetWorkName(WorkName: string);
+    procedure SetOld(old: integer);
+    procedure Init;
+
+    procedure GetName(Name: string);
+  end;
+
+implementation
+
+{ FWork }
+
+constructor FWork.Create(old: integer; Name, SecondName, WorkName: string);
+begin
+  Init;
+  FWorkName := WorkName;
+  FName := Name;
+  FSecondName := SecondName;
+  FOld := old;
+
+end;
+
+destructor FWork.Destroy;
+begin
+
+end;
+
+procedure FWork.GetName;
+begin
+  Writeln(Name);
+end;
+
+procedure FWork.Init;
+begin
+  FName := '';
+  FSecondName := '';
+  FOld := 0;
+  FWorkName := '';
+end;
+
+procedure FWork.SetName(Name: string);
+begin
+//  Writeln('Введите Имя');
+//  Readln(Name);
+  Name := FName;
+end;
+
+procedure FWork.SetOld(old: integer);
+begin
+
+end;
+
+procedure FWork.SetSecondName(SecondName: string);
+begin
+
+end;
+
+procedure FWork.SetWorkName(WorkName: string);
+begin
+
+end;
+
+end.

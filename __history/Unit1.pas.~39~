@@ -15,10 +15,9 @@ type
     FOld: integer;
     FWorkName: string;
     FColorEye: TColorsEye;
-    function GetColorEye: TColorsEye;
   public
-    property ColorEye: TColorsEye read GetColorEye write FColorEye;
-    constructor Create(old: integer; Name, SecondName, WorkName: string);  //
+    property ColorEye: TColorsEye read FColorEye write FColorEye;
+    constructor Create(old: integer; Name, SecondName, WorkName: string);
     destructor Destroy;
     procedure SetName(Name: string);
     procedure SetSecondName(SecondName: string);
@@ -52,11 +51,6 @@ begin
 end;
 
 
-
-function TWork.GetColorEye: TColorsEye;
-begin
-  Result := FColorEye;
-end;
 
 function TWork.GetName: string;
 begin
