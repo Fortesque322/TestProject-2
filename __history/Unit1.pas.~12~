@@ -22,7 +22,7 @@ type
     procedure SetOld(Old:integer);
     procedure Init;
 
-    function GetName(Name:string):string;
+    procedure GetName(Name:string);
   end;
 
 
@@ -45,7 +45,7 @@ begin
 
 end;
 
-function FWork.GetName;
+procedure FWork.GetName;
   begin
     Writeln(Name);
   end;
@@ -62,7 +62,6 @@ procedure FWork.Init;
 
 procedure FWork.SetName(Name: string);
   begin
-    Writeln('Введите Имя');
     Readln(Name);
     Name := FName;
   end;

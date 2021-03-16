@@ -9,11 +9,12 @@ uses
   Unit1 in 'Unit1.pas';
 
   var
-  CallMetod : FWork;
+    Name, SecondName, WorkName :string;
+//  x:integer;
 
 begin
   try
-      FWork.GetName;
+    FWork.GetName;
 //    Writeln('Имя, Фамилию, Проф');
 //    Readln(Name,SecondName,WorkName);
 //    Writeln('Введите возраст');
