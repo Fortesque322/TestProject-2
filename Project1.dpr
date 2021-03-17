@@ -22,7 +22,7 @@ begin
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
 
-  Writeln('Цвет глаз: ' , ord(Employee.color));   // Вывод порядкового номера
+  Writeln('Цвет глаз: ' , ord(color));   // Вывод порядкового номера
 
   Writeln('Замените данные');
     readln(str);

@@ -44,9 +44,9 @@ implementation
 constructor TWork.Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);
 begin
   Init;
+  FName := Name;
   FColorEye := ColorEye;
   FWorkName := WorkName;
-  FName := Name;
   FSecondName := SecondName;
   FOld := old;
 

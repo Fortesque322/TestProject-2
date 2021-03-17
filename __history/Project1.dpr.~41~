@@ -10,18 +10,19 @@ uses
 
   var
   Employee : TWork;
+  color:TColorsEye;
   str:string;
 
 begin
   try
-  Employee := Twork.Create(12,'Red','aaa','ddd','sss');
+  Employee := Twork.Create(12, Red,'aaa','ddd','sss');
 
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
 
-  //Writeln('Цвет Глаз: ' + Employee.ColorEye);
+  Writeln('Цвет глаз: ' , ord(Employee.color));   // Вывод порядкового номера
 
   Writeln('Замените данные');
     readln(str);
@@ -33,14 +34,17 @@ begin
     readln(str);
   Employee.SetWorkName(str);
     readln(str);
-  Employee.SetColorEye();
+  Employee.SetColorEye(color);
 
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
+  Writeln('Цвет глаз: ', ord(color));
+  //Writeln('Eye: '+ Employee.GetColorEye);
+  Readln;
+  //sleep(5000);
 
-  readln;
   except
     on E: Exception do
       Writeln(E.ClassName, 'Erro!', E.Message);
