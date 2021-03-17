@@ -15,14 +15,14 @@ uses
 
 begin
   try
-  Employee := Twork.Create(12, Blue,'aaa','ddd','sss');
+  Employee := Twork.Create(12, Red,'aaa','ddd','sss');
 
   Writeln('Имя: ' + Employee.GetName);
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
 
-  Writeln('Цвет Глаз: ' + Employee.ColorEye);   // Несовместимый тип данных строка и Tcolor
+  Writeln('Цвет глаз: ' , ord(Employee.color));   // Вывод порядкового номера
 
   Writeln('Замените данные');
     readln(str);
@@ -40,9 +40,11 @@ begin
   Writeln('Фамилия: ' + Employee.GetSecondName);
   Writeln('Возраст: ' + Inttostr(Employee.GetOld));
   Writeln('Проф: ' + Employee.GetWorkName);
-  Writeln('Eye: '+ Employee.GetColorEye);  //private
+  Writeln('Цвет глаз: ', ord(color));
+  //Writeln('Eye: '+ Employee.GetColorEye);
+  Readln;
+  //sleep(5000);
 
-  readln;
   except
     on E: Exception do
       Writeln(E.ClassName, 'Erro!', E.Message);

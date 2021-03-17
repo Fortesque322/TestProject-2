@@ -14,27 +14,27 @@ type
     FSecondName: string;
     FOld: integer;
     FWorkName: string;
-
     FColorEye: TColorsEye;  //Переменная FColorEye с типом данных TColorEye
-    function GetColorEye: TColorsEye;
-
   public
-
+    function GetColorEye: TColorsEye; // Спросить по поводу private фукций при вызове в самом проекте
     property ColorEye: TColorsEye read GetColorEye write FColorEye;
     constructor Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);  //
     destructor Destroy;
-
+    //
     procedure SetName(Name: string);
     procedure SetSecondName(SecondName: string);
     procedure SetWorkName(WorkName: string);
     procedure SetOld(old: integer);
     procedure SetColorEye(ColorEye:TColorsEye);
     procedure Init;
-
+    //
     function GetName: string;
     function GetSecondName: string;
     function GetWorkName: string;
     function GetOld: integer;
+
+
+
   end;
 
 implementation
@@ -56,8 +56,6 @@ destructor TWork.Destroy;
 begin
 
 end;
-
-
 
 function TWork.GetColorEye: TColorsEye;
 begin
@@ -92,7 +90,7 @@ begin
   FWorkName := '';
 end;
 
-procedure TWork.SetColorEye;
+procedure TWork.SetColorEye (ColorEye:TColorsEye);
 begin
  FColorEye := ColorEye;
 end;
