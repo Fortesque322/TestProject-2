@@ -15,8 +15,9 @@ type
     FOld: integer;
     FWorkName: string;
     FColorEye: TColorsEye;  //Переменная FColorEye с типом данных TColorEye
+    function GetColorEye: TColorsEye;
   public
-    function GetColorEye: TColorsEye; // Спросить по поводу private фукций при вызове в самом проекте
+     // Спросить по поводу private фукций при вызове в самом проекте
     property ColorEye: TColorsEye read GetColorEye write FColorEye;
     constructor Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);  //
     destructor Destroy;

@@ -29,7 +29,7 @@ type
     procedure Init;
     //
     function GetName: string;
-    function GetSecondName: string;
+    procedure GetSecondName;
     function GetWorkName: string;
     function GetOld: integer;
 
@@ -44,9 +44,9 @@ implementation
 constructor TWork.Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);
 begin
   Init;
+  FName := Name;
   FColorEye := ColorEye;
   FWorkName := WorkName;
-  FName := Name;
   FSecondName := SecondName;
   FOld := old;
 
@@ -72,9 +72,9 @@ begin
   Result := FOld;
 end;
 
-function TWork.GetSecondName: string;
+procedure TWork.GetSecondName;
 begin
-  Result := FSecondName;
+ // Result := FSecondName;
 end;
 
 function TWork.GetWorkName: string;

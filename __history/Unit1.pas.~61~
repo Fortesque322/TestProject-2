@@ -16,7 +16,7 @@ type
     FWorkName: string;
     FColorEye: TColorsEye;  //Переменная FColorEye с типом данных TColorEye
   public
-    function GetColorEye: TColorsEye; // Спросить по поводу private фукций в самом проекте
+    function GetColorEye: TColorsEye; // Спросить по поводу private фукций при вызове в самом проекте
     property ColorEye: TColorsEye read GetColorEye write FColorEye;
     constructor Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);  //
     destructor Destroy;
@@ -44,9 +44,9 @@ implementation
 constructor TWork.Create(old: integer; ColorEye:TColorsEye; Name, SecondName, WorkName: string);
 begin
   Init;
+  FName := Name;
   FColorEye := ColorEye;
   FWorkName := WorkName;
-  FName := Name;
   FSecondName := SecondName;
   FOld := old;
 
